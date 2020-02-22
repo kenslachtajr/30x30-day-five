@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="col-50">
+    <pets-pets-list
+      [pets]="pet$ | async"
+      (selected)="selectPet($event)"
+      (deleted)="deletePet($event)"
+    >
+    </pets-pets-list>
+  </div>
+
+  <div class="col-50">
+    <pets-pets-details
+      [form]="form"
+      [pet]="selectedPet"
+      (saved)="savePet()"
+      (cancelled)="cancel()"
+    >
+    </pets-pets-details>
+  </div>
+</div>
